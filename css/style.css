@@ -1,0 +1,234 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e293b;
+    --text-color: #334155;
+    --bg-color: #f8fafc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--white);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* Lado Izquierdo - Sidebar */
+.sidebar {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 40px 30px;
+}
+
+/* Ajuste de tamaño y centrado para la foto de perfil */
+.profile-img {
+    width: 85%;            /* No ocupa el 100% para dejar un margen elegante */
+    max-width: 220px;      /* Tamaño máximo ideal para que no se vea gigante */
+    height: auto;          /* Mantiene la proporción original sin estirar */
+    display: block;        /* Permite centrar con margin auto */
+    margin: 0 auto 25px;   /* Centra horizontalmente y da espacio abajo */
+    
+    border-radius: 12px;   /* Bordes redondeados tipo tarjeta */
+    border: 3px solid var(--accent); /* Marco de alto contraste */
+    object-fit: contain;   /* Asegura que la foto se vea completa */
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.03); /* Efecto sutil al pasar el mouse */
+}
+
+/* Contenedor de la foto para asegurar el centrado en el sidebar */
+.photo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.sidebar h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--primary-color);
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-list i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.info-list a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* Lado Derecho - Contenido Principal */
+.main-content {
+    padding: 40px;
+}
+
+.header-main h1 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    line-height: 1.2;
+}
+
+.header-main p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2.section-title {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.education-item, .project-item {
+    margin-bottom: 20px;
+}
+
+.education-item h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.education-item span {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #64748b;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.skill-tag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        text-align: center;
+    }
+    .info-list li {
+        justify-content: center;
+    }
+
+}
+
+/* BOTONES MÁS PEQUEÑOS Y PROPORCIONADOS */
+.btn-proyecto {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;              /* Espacio más pequeño entre icono y texto */
+    margin-top: 12px;
+    padding: 6px 15px;      /* Reducido: antes era 12px 25px */
+    
+    background-color: transparent;
+    color: #0ea5e9; 
+    
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.75rem;     /* Fuente más pequeña y elegante */
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: 1.5px solid #0ea5e9; /* Borde un poco más fino */
+    border-radius: 6px;
+    
+    transition: all 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* El efecto de fondo al pasar el mouse */
+.btn-proyecto::before {
+    content: "";
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0ea5e9;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-proyecto:hover {
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-proyecto:hover::before {
+    top: 0;
+}
+
+.btn-proyecto i {
+    font-size: 0.9rem; /* Icono ajustado al nuevo tamaño */
+}
