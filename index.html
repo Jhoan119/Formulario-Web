@@ -3,87 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV | Jhoan Stiven Noscue Arias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Formulario de Contacto</title>
+
+   <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(120deg, #d5d9e0, #c0d3e6);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 32px 30px;
+            width: 100%;
+            max-width: 420px;
+            border-radius: 18px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 14px;
+            color: #64748b;
+            margin-bottom: 26px;
+        }
+
+        label {
+            display: block;
+            margin-top: 14px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 11px;
+            margin-top: 6px;
+            border-radius: 10px;
+            border: 1px solid #cbd5e1;
+            font-size: 14px;
+            background: #f9fafb;
+        }
+
+        input:focus,
+        select:focus {
+            outline: none;
+            border-color: #2563eb;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        .checkbox {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-top: 18px;
+            font-size: 14px;
+            color: #475569;
+        }
+
+        .checkbox label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 26px;
+            padding: 13px;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(37, 99, 235, 0.35);
+        }
+    </style>
+
+    
 </head>
 <body>
+    <form action="#" method="post">
+        <h2>Formulario de Contacto</h2>
 
-    <div class="container">
-        <aside class="sidebar">
-            <img src="img/perfil.jpg" alt="Jhoan Stiven Noscue Arias" class="profile-img">
-            
-            <h2>Contacto</h2>
-            <ul class="info-list">
-                <li><i class="fas fa-envelope"></i> 3106arias@gmail.com</li>
-                <li><i class="fas fa-phone"></i> 322 807 2723</li>
-                <li><i class="fas fa-map-marker-alt"></i> Bogotá D.C.</li>
-                <li><i class="fab fa-github"></i> <a href="https://github.com/Jhoan119" target="_blank">Jhoan119</a></li>
-            </ul>
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
 
-            <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <div class="skill-tag">HTML5</div>
-                <div class="skill-tag">CSS3</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">Python</div>
-                <div class="skill-tag">MySQL</div>
-                <div class="skill-tag">Git</div>
-            </div>
-        </aside>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" id="apellido" name="apellido" required><br><br>
 
-        <main class="main-content">
-            <header class="header-main">
-                <h1>Jhoan Stiven <br>Noscue Arias</h1>
-                <p>Desarrollador de Software en Formación</p>
-            </header>
+        <label for="tipo-id">Tipo de Identificación:</label><br>
+        <select id="tipo-id" name="tipo-id" required>
+            <option value="">Seleccione...</option>
+            <option value="Cc">Cédula de Ciudadanía</option>
+            <option value="Ti">Tarjeta de Identidad</option>
+            <option value="Pa">Pasaporte</option>
+        </select><br><br>
 
-            <section>
-                <h2 class="section-title"><i class="fas fa-user"></i> Perfil Profesional</h2>
-                <p>
-                    Tecnólogo en Programación de Software en formación en el SENA. Apasionado por la creación de soluciones tecnológicas, con bases sólidas en desarrollo web y gestión de bases de datos. Soy una persona responsable, autodidacta y con gran capacidad para el trabajo colaborativo.
-                </p>
-            </section>
+        <label for="numero-id">Número de Identificación:</label><br>
+        <input type="number" id="numero-id" name="numero-id" required><br><br>
 
-            <section>
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Educación</h2>
-                
-                <div class="education-item">
-                    <h3>Tecnólogo en Programación de Software</h3>
-                    <p>SENA – Sede Bogotá</p>
-                    <span>ACTUALMENTE EN CURSO</span>
-                </div>
+        <label for="fecha-nac">Fecha de Nacimiento:</label><br>
+        <input type="date" id="fecha-nac" name="fecha-nac" required><br><br>
 
-                <div class="education-item">
-                    <h3>Técnico Laboral en Programación de Software</h3>
-                    <p>SENA – Sede Bogotá</p>
-                    <span>GRADUADO - 2023</span>
-                </div>
-            </section>
+        <label for="celular">Número de Celular:</label><br>
+        <input type="tel" id="celular" name="celular" placeholder="Ej: 3001234567" required><br><br>
 
-            <div class="project-card">
-                <h3>💾 Formulario-Web</h3>
-                <p>Formulario web de registro de usuarios creado con HTML</p>
-                
-                <a href="https://github.com/Jhoan119/BatallaNaval" target="_blank" class="btn-proyecto">
-                    <i class="fab fa-github"></i> Ver Repositorio
-                </a>
-            </div>
-                    <div class="project-card">
-                <h3>🛒Marketplace digital</h3>
-                <p>Se muestra el avance y mejora de una plataforma de intermediación comercial.</p>
-                
-                <a href="https://jhoan119.github.io/Marketpleace-digital/" target="_blank" class="btn-proyecto">
-                    <i class="fab fa-github"></i> Ver Repositorio
-                </a>
-            </div>
-        </main>
-    </div>
+        <input type="checkbox" id="politica" name="politica" required>
+        <label for="politica">Acepto la política de tratamiento de datos personales.</label><br><br>
 
-    <footer>
-        <p>© 2025 – Jhoan Stiven Noscue Arias | Hecho con HTML & CSS</p>
-    </footer>
-
+        <button type="submit">Enviar</button>
+    </form>
 </body>
 </html>
